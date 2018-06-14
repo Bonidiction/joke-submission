@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submit joke</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/mainStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/jokeStyle.css}">
+</head>
+<body>
+	<h1>Submit joke</h1>
+	<div id="submitJoke">
+    	<form action="#" id="submitJokeForm" th:action="@{/new}" th:object="${joke}" method="post">
+        	<label>Joke: <textarea cols="50" th:field="*{content}" /></textarea></label>
+        	<p><input type="submit" value="Submit" onclick="location.reload()"/> <input type="reset" value="Reset" /></p>
+    	</form>
+    </div>
+</body>
+</html>

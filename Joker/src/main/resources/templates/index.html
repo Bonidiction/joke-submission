@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<link rel="stylesheet" th:href="@{/css/mainStyle.css}">
+<meta charset="UTF-8">
+<title>All jokes</title>
+</head>
+<body>
+	<h1 th:if="${#lists.isEmpty(jokes)}">Please insert something funny</h1>
+	<table th:if="${not #lists.isEmpty(jokes)}">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Vic</th>
+				<th>Misljenje</th>
+				<th>Likes</th>
+				<th>Dislikes</th>
+				<th>Razlika</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="joke,iterStat : ${jokes}">
+				<td th:text="${iterStat.count}">#</td>
+				<td th:text="${joke.content}">joke</td>
+				<td>
+					<button th:attr="id=${joke.id}" class="glyphicon glyphicon-thumbs-up"></button>
+					<button th:attr="id=${joke.id}" class="glyphicon glyphicon-thumbs-down"></button>
+				</td>
+				<td th:text="${joke.likes}">#</td>
+				<td th:text="${joke.dislikes}">#</td>
+				<td th:text="${difference[iterStat.index]}">#</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

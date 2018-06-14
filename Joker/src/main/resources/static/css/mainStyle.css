@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	background: GreenYellow;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th {
+	color: cyan;
+	background: yellow;
+}
+
+table, th, td {
+	border: 1px solid red;
+	padding: 1px;
+}

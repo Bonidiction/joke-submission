@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Joke submitted</title>
+<META HTTP-EQUIV="refresh" CONTENT="2;URL=/new">
+</head>
+<body>
+	<h1>Joke submitted</h1>
+	<p th:text="'Joke: ' + ${joke.content}"/> 
+</body>
+</html>
